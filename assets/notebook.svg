@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="t d">
+  <title id="t">Field notes: what I work on</title>
+  <desc id="d">Four hand-drawn sketches: security, explainable AI, Web3 and civic tech, each with the projects that live there.</desc>
+  <defs>
+    <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.2"/>
+    </filter>
+    <pattern id="ruled" width="1200" height="28" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="27.5" x2="1200" y2="27.5" class="rule" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <style>
+    .ink{fill:#1f2328}.mute{fill:#59636e}.pen{stroke:#1f2328}.red{stroke:#cf222e}.redf{fill:#cf222e}
+    .blue{stroke:#0969da}.bluef{fill:#0969da}.rule{stroke:#d1d9e0}.margin{stroke:#cf222e}
+    @media (prefers-color-scheme: dark){
+      .ink{fill:#e6edf3}.mute{fill:#9198a1}.pen{stroke:#e6edf3}.red{stroke:#ff7b72}.redf{fill:#ff7b72}
+      .blue{stroke:#58a6ff}.bluef{fill:#58a6ff}.rule{stroke:#262c36}.margin{stroke:#6e2b2b}
+    }
+    .hand{font-family:'Segoe Print','Bradley Hand','Chalkboard SE','Comic Neue','Comic Sans MS',cursive}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .draw{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.6s ease-out forwards}
+    .d2{animation-delay:.5s}.d3{animation-delay:1s}.d4{animation-delay:1.5s}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    @media (prefers-reduced-motion: reduce){.draw{animation:none;stroke-dashoffset:0}}
+  </style>
+
+  <rect width="1200" height="440" fill="url(#ruled)" opacity=".7"/>
+  <line x1="18" y1="0" x2="18" y2="440" class="margin" stroke-width="1.5" opacity=".6"/>
+
+  <g fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch)">
+    <!-- 1 security: padlock on a chain of hashes -->
+    <rect x="98" y="104" width="76" height="62" rx="8" class="pen draw"/>
+    <path d="M112 104 v-18 a24 24 0 0 1 48 0 v18" class="pen draw"/>
+    <circle cx="136" cy="130" r="7" class="red draw d2"/><path d="M136 137 v12" class="red draw d2"/>
+    <rect x="200" y="98" width="58" height="26" rx="5" class="pen draw d2"/><rect x="200" y="140" width="58" height="26" rx="5" class="pen draw d3"/>
+    <path d="M229 124 v16" class="pen draw d3"/>
+    <!-- 2 explainable AI: a tiny net with one reason highlighted -->
+    <circle cx="372" cy="94" r="9" class="pen draw"/><circle cx="372" cy="134" r="9" class="pen draw"/><circle cx="372" cy="174" r="9" class="pen draw"/>
+    <circle cx="442" cy="114" r="9" class="pen draw d2"/><circle cx="442" cy="154" r="9" class="pen draw d2"/>
+    <circle cx="512" cy="134" r="11" class="red draw d3"/>
+    <path d="M381 94 L433 114 M381 134 L433 114 M381 134 L433 154 M381 174 L433 154 M381 94 L433 154" class="pen draw d2" opacity=".55"/>
+    <path d="M451 114 L501 134 M451 154 L501 134" class="pen draw d3"/>
+    <path d="M381 174 L433 154 L501 134" class="red draw d4" stroke-width="3.4"/>
+    <!-- 3 web3: blocks with a coin passing through -->
+    <rect x="660" y="112" width="54" height="44" rx="5" class="pen draw"/><rect x="740" y="112" width="54" height="44" rx="5" class="pen draw d2"/><rect x="820" y="112" width="54" height="44" rx="5" class="pen draw d3"/>
+    <path d="M714 134 h26 M794 134 h26" class="pen draw d3"/>
+    <circle cx="767" cy="84" r="16" class="red draw d4"/><path d="M767 76 v16 M761 80 h10 M761 88 h10" class="red draw d4"/>
+    <!-- 4 civic: city grid with a reported pin -->
+    <path d="M952 176 h176 M952 140 h176 M952 104 h176 M984 80 v112 M1040 80 v112 M1096 80 v112" class="pen draw" opacity=".5"/>
+    <path d="M1068 132 c-18 -22 -18 -44 0 -48 c18 4 18 26 0 48 z" class="red draw d2"/>
+    <circle cx="1068" cy="104" r="5" class="red draw d3"/>
+    <path d="M1012 160 l12 -10 l12 10" class="blue draw d3"/>
+  </g>
+
+  <g class="hand">
+    <text x="60" y="58" class="ink" font-size="26">security</text>
+    <text x="350" y="58" class="ink" font-size="26">explainable AI</text>
+    <text x="640" y="58" class="ink" font-size="26">web3</text>
+    <text x="930" y="58" class="ink" font-size="26">civic tech</text>
+
+    <text x="60" y="226" class="ink" font-size="17">trust nothing by default.</text>
+    <text x="60" y="254" class="mute" font-size="16">every finding hashed + signed</text>
+    <text x="60" y="280" class="mute" font-size="16">(Ed25519, SHA-256)</text>
+
+    <text x="350" y="226" class="ink" font-size="17">models must show their reasons.</text>
+    <text x="350" y="254" class="mute" font-size="16">the red path = why it decided</text>
+
+    <text x="640" y="226" class="ink" font-size="17">money you can audit.</text>
+    <text x="640" y="254" class="mute" font-size="16">every donation leaves a receipt</text>
+    <text x="640" y="280" class="mute" font-size="16">on-chain</text>
+
+    <text x="930" y="226" class="ink" font-size="17">built for real departments.</text>
+    <text x="930" y="254" class="mute" font-size="16">citizens report, wards respond</text>
+  </g>
+
+  <g class="mono" font-size="13.5">
+    <text x="60" y="334" class="redf">→</text><text x="80" y="334" class="ink">AURA-CV</text>
+    <text x="60" y="360" class="redf">→</text><text x="80" y="360" class="ink">TunnelScope</text>
+    <text x="60" y="386" class="redf">→</text><text x="80" y="386" class="ink">URL scanner</text>
+
+    <text x="350" y="334" class="redf">→</text><text x="370" y="334" class="ink">CredTech</text>
+    <text x="350" y="360" class="redf">→</text><text x="370" y="360" class="ink">CVE explainer</text>
+    <text x="350" y="386" class="redf">→</text><text x="370" y="386" class="ink">Cyber security portal</text>
+
+    <text x="640" y="334" class="redf">→</text><text x="660" y="334" class="ink">CharityChain</text>
+    <text x="640" y="360" class="redf">→</text><text x="660" y="360" class="ink">Neighbour energy exchange</text>
+    <text x="640" y="386" class="redf">→</text><text x="660" y="386" class="ink">EMF agents (Algorand)</text>
+
+    <text x="930" y="334" class="redf">→</text><text x="950" y="334" class="ink">Nagrik Setu</text>
+    <text x="930" y="360" class="redf">→</text><text x="950" y="360" class="ink">Eco-Ward dashboard</text>
+    <text x="930" y="386" class="redf">→</text><text x="950" y="386" class="ink">Delhi dashboard</text>
+  </g>
+</svg>
