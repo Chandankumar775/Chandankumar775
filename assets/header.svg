@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="t d">
+  <title id="t">Chandan Kumar</title>
+  <desc id="d">Builds security and AI tools. A small currency graph on the right traces a negative cycle.</desc>
+  <style>
+    .ink{fill:#1f2328}.mute{fill:#59636e}.rule{stroke:#d1d9e0}.edge{stroke:#c3ccd5}
+    .node{fill:#ffffff;stroke:#1f2328}.acc{stroke:#cf222e}.accf{fill:#cf222e}
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+    .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+    @media (prefers-color-scheme: dark){
+      .ink{fill:#e6edf3}.mute{fill:#9198a1}.rule{stroke:#3d444d}.edge{stroke:#3d444d}
+      .node{fill:#0d1117;stroke:#e6edf3}.acc{stroke:#ff7b72}.accf{fill:#ff7b72}
+    }
+    .flow{stroke-dasharray:14 10;animation:flow 2.4s linear infinite}
+    .pulse{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes flow{to{stroke-dashoffset:-48}}
+    @keyframes pulse{0%,100%{opacity:.25}50%{opacity:.9}}
+    @media (prefers-reduced-motion: reduce){.flow,.pulse{animation:none}}
+  </style>
+
+  <!-- name + line -->
+  <text x="40" y="128" class="ink serif" font-size="74" font-weight="600" letter-spacing="-1.5">Chandan Kumar</text>
+  <text x="42" y="182" class="ink sans" font-size="25">I build security and AI tools: software that checks</text>
+  <text x="42" y="216" class="ink sans" font-size="25">whether data, models and network traffic can be trusted.</text>
+  <line x1="42" y1="258" x2="700" y2="258" class="rule" stroke-width="1.5"/>
+  <text x="42" y="292" class="mute mono" font-size="17">Delhi, India  ·  TypeScript  ·  Python  ·  Solidity  ·  Three.js</text>
+
+  <!-- currency graph: every pair is an edge, one loop is profitable -->
+  <g stroke-width="1.6" fill="none">
+    <line x1="868" y1="86"  x2="1104" y2="104" class="edge"/>
+    <line x1="868" y1="86"  x2="1084" y2="262" class="edge"/>
+    <line x1="868" y1="86"  x2="852"  y2="244" class="edge"/>
+    <line x1="1104" y1="104" x2="1084" y2="262" class="edge"/>
+    <line x1="1104" y1="104" x2="852" y2="244" class="edge"/>
+    <line x1="1084" y1="262" x2="852" y2="244" class="edge"/>
+  </g>
+  <path d="M868 86 L1104 104 L1084 262 Z" fill="none" class="acc flow" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M868 86 L1104 104 L1084 262 Z" fill="none" class="acc pulse" stroke-width="9" stroke-linejoin="round" opacity=".25"/>
+
+  <g stroke-width="2">
+    <circle cx="868" cy="86" r="22" class="node acc"/>
+    <circle cx="1104" cy="104" r="22" class="node acc"/>
+    <circle cx="1084" cy="262" r="22" class="node acc"/>
+    <circle cx="852" cy="244" r="22" class="node"/>
+  </g>
+  <g class="mono" font-size="13" font-weight="600" text-anchor="middle">
+    <text x="868" y="91" class="accf">USD</text>
+    <text x="1104" y="109" class="accf">EUR</text>
+    <text x="1084" y="267" class="accf">GBP</text>
+    <text x="852" y="249" class="ink">INR</text>
+  </g>
+  <text x="1160" y="318" text-anchor="end" class="mute mono" font-size="14">−ln 0.90 − ln 0.88 − ln 1.27 &lt; 0</text>
+</svg>
