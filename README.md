@@ -1,64 +1,108 @@
-<img src="assets/ledger.svg" alt="Chandan Kumar: I build security and AI tools. My projects as a SHA-256 hash chain, verified block by block." width="100%">
+<a href="https://github.com/Chandankumar775?tab=repositories"><img src="assets/sheets/00-about.svg" alt="Chandan Kumar, security and AI engineer. I build systems that check whether data, models and network traffic can be trusted." width="100%"></a>
 
-Most of what I build starts as a hackathon problem statement: a Smart India Hackathon (SIH) brief from the Ministry of Defence, a state government or a university hackathon. I keep working on it until it is a real, working system. I care about tools that show their reasoning, whether that is a VPN scanner explaining its grade, a credit score explaining its features, or an algorithm you can watch run.
+I'm a security and AI engineer. Most of my projects come down to one question: *can this input be trusted, and can the system show why?* That covers encrypted VPN traffic, computer-vision models, credit decisions and donations. Below, each project is sketched the way I'd explain it at a whiteboard. Click a sheet to open it, or expand **How it's built** for the details.
 
-<sub>The header above is a real hash chain: each block's SHA-256 covers the block before it. A GitHub Action rebuilds it every night, and new projects with a live demo join the chain automatically.</sub>
-
-<br>
-
-### On screen
-
-<img src="assets/reel.gif" alt="Demo reel: TunnelScope, AURA-CV, the 3D arbitrage model, Eco-Ward, the cyber security portal and Armedias" width="100%">
-
-<sub>Recorded from the live deployments, not mockups.</sub>
+<img src="assets/sheets/01-toolbox.svg" alt="My toolbox: TypeScript, Python, React, Next.js, Three.js, WebGL, Recharts, Ed25519, SHA-256, RFC 8785, IPsec, Solidity, ethers.js, web3dart, Algorand, Genkit, Gemini, Pydantic, Vercel, Firebase, Docker, Flutter" width="100%">
 
 <br>
 
-### Now building
+<a href="https://aura-cv-phi.vercel.app"><img src="assets/sheets/02-aura-cv.svg" alt="AURA-CV: integrity checks for computer-vision pipelines, fully air-gapped" width="100%"></a>
 
-**[TunnelScope](https://github.com/Chandankumar775/tunnlescope)** &nbsp;·&nbsp; [live ↗](https://tunnlescope.vercel.app)<br>
-AI-driven IPsec VPN analysis for Smart India Hackathon. It reads encrypted tunnel traffic and reports what was negotiated, how secure it is, and what a passive observer can still learn. Eleven deployments are graded A to F, and a fix simulator regrades a tunnel live as you apply each recommendation.
+<details>
+<summary><b>How it's built</b> · AURA-CV</summary>
+<br>
 
-**[AURA-CV](https://github.com/Chandankumar775/aura-cv)** &nbsp;·&nbsp; [live ↗](https://aura-cv-phi.vercel.app)<br>
-Air-gapped integrity assurance for computer-vision pipelines, built for the Ministry of Defence problem statement at SIH. It checks datasets, models and inference outputs from untrusted contributors, and records every finding in a hash-chained audit log signed with Ed25519.
+- Evaluates a contributed dataset, a trained model, inference records and new input batches without trusting any source.
+- Check plugins produce findings and a disposition. Each one is written to a **hash-chained audit log, signed with Ed25519** over **RFC 8785** canonical JSON.
+- An outbound network guard keeps it truly air-gapped, and `aura selfcheck` verifies the install.
+- **Python** (Pydantic, cryptography, rfc8785, Typer) for the engine; **React + Three.js** for the assurance console.
+
+[Live demo ↗](https://aura-cv-phi.vercel.app) · [Repository](https://github.com/Chandankumar775/aura-cv)
+</details>
 
 <br>
 
-### Field notes
+<a href="https://tunnlescope.vercel.app"><img src="assets/sheets/03-tunnelscope.svg" alt="TunnelScope: reads encrypted IPsec traffic and grades how safe the VPN is" width="100%"></a>
 
-<img src="assets/notebook.svg" alt="Hand-drawn notes on four areas: security, explainable AI, web3 and civic tech, with the projects in each" width="100%">
+<details>
+<summary><b>How it's built</b> · TunnelScope</summary>
+<br>
+
+- Dissects an encrypted IPsec capture: identifies the protocol (with method and confidence), assesses its security, builds a threat matrix and reports metadata exposure.
+- Grades 11 demo deployments from **A to F**. The fix simulator recomputes the score live and produces the **strongSwan** config diff.
+- Fleet map, compliance checks, executive and technical reports, and offline Q&A, all running in the browser with no backend.
+- **TypeScript + React**, Zustand for state, Recharts, Framer Motion, Firebase.
+
+[Live demo ↗](https://tunnlescope.vercel.app) · [Repository](https://github.com/Chandankumar775/tunnlescope)
+</details>
 
 <br>
 
-### Selected work
+<a href="https://model-analysis-for-the-arbitage-sys.vercel.app"><img src="assets/sheets/04-arbitrage-3d.svg" alt="Arbitrage System in 3D: Bellman-Ford hunting forex arbitrage, explorable as a 3D model" width="100%"></a>
 
-| | What it does | Built with |
-| :-- | :-- | :-- |
-| **[Arbitrage System, in 3D](https://github.com/Chandankumar775/model-analysis-for-the-arbitage-system-)** <br><sub>[live ↗](https://model-analysis-for-the-arbitage-sys.vercel.app)</sub> | An interactive model of a forex arbitrage detector. You can watch Bellman-Ford relax every edge and trace a negative cycle across a live currency graph. | Three.js, WebGL |
-| **[EMF Multi-Agent](https://github.com/Chandankumar775/emf-multiagent)** | One request coordinates several paid AI endpoints. Each step of an agent pipeline is settled as its own USDC micro-payment on Algorand. | TypeScript, Algorand |
-| **[CredTech](https://github.com/Chandankumar775/credtech-by-chandan-kumar-)** | Explainable credit scoring: it combines financial and unstructured data into real-time scores, with the reasons behind each one shown feature by feature. | Next.js, ML |
-| **[Nagrik Setu](https://github.com/Chandankumar775/nagrik-setu)** | Civic issue reporting for the Government of Jharkhand, built with Team Urban Dons for SIH. | Next.js, TypeScript |
-| **[Neighbour Energy Exchange](https://github.com/Chandankumar775/free_transaction_to-my-neighbour-)** | Peer-to-peer solar and wind energy trading between neighbours, with no utility in the middle. Built for the KR Manglam University Hackathon 2026. | Solidity, TypeScript |
-| **[CharityChain](https://github.com/Chandankumar775/CharityChain)** | Transparent charity donations: smart contracts, NGO verification and on-chain tracking of where every donation goes. | Solidity, Flutter, Next.js |
-| **[Eco-Ward Dashboard](https://github.com/Chandankumar775/new-delhi-dashboard-eco-ward-)** <br><sub>[live ↗](https://new-delhi-dashboard-eco-ward.vercel.app)</sub> | Ward-level air quality intelligence for New Delhi. | Next.js |
+<details>
+<summary><b>How it's built</b> · Arbitrage System, in 3D</summary>
+<br>
 
-<sub>Also: a [URL scanner](https://github.com/Chandankumar775/url-scanner-), a [CVE explainer](https://github.com/Chandankumar775/-cve-explainer-ml) built on machine learning, [Watchtower Sentinel](https://github.com/Chandankumar775/watchtower-sentinel), and my [machine learning lab notebooks](https://github.com/Chandankumar775/MACHINE-LEARNING-ALL-FILES-BY-CHANDAN-KUMAR-).</sub>
+- Converts exchange rates into a graph with weights `w = −log(rate × (1 − fee))`, so a profitable loop becomes a **negative cycle**.
+- Runs Bellman-Ford in the browser and records every relaxation, which is replayed step by step in a 17-step 3D walkthrough of a Spring Boot + Java Swing architecture.
+- Live mode re-detects arbitrage on random-walk prices every tick. Hover tracing links the data tables to the 3D model.
+- **Three.js / WebGL** with procedural canvas textures and no image assets.
+
+[Live demo ↗](https://model-analysis-for-the-arbitage-sys.vercel.app) · [Repository](https://github.com/Chandankumar775/model-analysis-for-the-arbitage-system-)
+</details>
 
 <br>
 
-### Live traffic
+<a href="https://github.com/Chandankumar775/credtech-by-chandan-kumar-"><img src="assets/sheets/05-credtech.svg" alt="CredTech: credit scores that explain themselves, feature by feature" width="100%"></a>
 
-<img src="assets/packets.svg" alt="My most recent public pushes, shown as a packet capture" width="100%">
+<details>
+<summary><b>How it's built</b> · CredTech</summary>
+<br>
+
+- Ingests multi-source financial data alongside unstructured text and produces real-time credit scores.
+- Each score comes with **feature-level explanations** showing what pushed it up or down, in an analyst dashboard.
+- **Next.js + TypeScript**, **Genkit with Gemini** for the unstructured side, Firebase, Radix UI.
+
+[Repository](https://github.com/Chandankumar775/credtech-by-chandan-kumar-)
+</details>
 
 <br>
 
-### Tools I reach for
+<a href="https://github.com/Chandankumar775/emf-multiagent"><img src="assets/sheets/06-emf-multiagent.svg" alt="EMF Multi-Agent: one request pays a chain of AI services, step by step" width="100%"></a>
 
-**Languages** &nbsp; TypeScript · Python · JavaScript · Solidity · Java · Dart<br>
-**Building** &nbsp; Next.js · React · Three.js · Flutter · Spring Boot<br>
-**Security & ML** &nbsp; IPsec / strongSwan · Ed25519 & SHA-256 · Python ML · Jupyter<br>
-**Shipping** &nbsp; Vercel · Firebase · PostgreSQL · Docker · Git
+<details>
+<summary><b>How it's built</b> · EMF Multi-Agent</summary>
+<br>
+
+- A research-agent pipeline (search, scrape, summarise, write the report) where each step is an independently priced API call.
+- Each step settles its own USDC micro-payment, x402-style, on Algorand testnet. The demo shows **Pending → Paying → Settled** with simulated transaction hashes.
+- **Next.js + React + TypeScript**, Recharts, Framer Motion.
+
+[Repository](https://github.com/Chandankumar775/emf-multiagent)
+</details>
 
 <br>
 
-<sub>Delhi, India · Open to hackathon teams and security or AI collaborations: open an issue on any repo to reach me.</sub>
+<a href="https://github.com/Chandankumar775/CharityChain"><img src="assets/sheets/07-charitychain.svg" alt="CharityChain: charity donations anyone can audit, end to end" width="100%"></a>
+
+<details>
+<summary><b>How it's built</b> · CharityChain</summary>
+<br>
+
+- Donations flow through a **Solidity** smart contract, with NGO verification and admin controls over who can receive funds.
+- Every transaction is traceable on-chain, and MetaMask is used for wallets.
+- Two clients: a **Next.js** web app (ethers.js, React Query) and a **Flutter** app (web3dart).
+
+[Repository](https://github.com/Chandankumar775/CharityChain)
+</details>
+
+<br>
+
+### The same projects, running
+
+<img src="assets/reel.gif" alt="Screen recording of the live deployments: TunnelScope, AURA-CV, the 3D arbitrage model, Eco-Ward, the cyber security portal and Armedias" width="100%">
+
+<sub>Also on my GitHub: [Nagrik Setu](https://github.com/Chandankumar775/nagrik-setu) (civic reporting) · [Eco-Ward](https://new-delhi-dashboard-eco-ward.vercel.app) (Delhi air quality) · [URL scanner](https://github.com/Chandankumar775/url-scanner-) · [CVE explainer](https://github.com/Chandankumar775/-cve-explainer-ml) · [Neighbour Energy Exchange](https://github.com/Chandankumar775/free_transaction_to-my-neighbour-)</sub>
+
+<sub>Delhi, India</sub>
